@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="sk"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facebook náhľad · Vyvážené detstvo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F0F2F5;font-family:'Inter',Helvetica,Arial,sans-serif;color:#050505;
+padding:28px 16px 80px;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1120px;margin:0 auto;}
+header.top{background:#fff;border-radius:14px;padding:26px 30px;margin-bottom:26px;
+box-shadow:0 1px 2px rgba(0,0,0,.1);}
+header.top h1{font-size:24px;font-weight:700;}
+header.top p{margin-top:8px;font-size:14px;line-height:1.55;color:#65676B;max-width:820px;}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.legend span{background:#E7F3FF;color:#1877F2;border-radius:999px;
+padding:5px 14px;font-size:12.5px;font-weight:600;}
+.feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(500px,1fr));gap:24px;}
+@media(max-width:620px){.feed{grid-template-columns:1fr;}}
+.post{background:#fff;border-radius:10px;box-shadow:0 1px 2px rgba(0,0,0,.2);overflow:hidden;}
+.phead{display:flex;align-items:center;gap:10px;padding:12px 16px 0;}
+.ava{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none;
+background:#E4E6EB;}
+.pname{font-size:15px;font-weight:600;line-height:1.2;}
+.pmeta{font-size:12.5px;color:#65676B;margin-top:2px;display:flex;align-items:center;gap:4px;}
+.pnum{margin-left:auto;font-size:12px;font-weight:700;color:#B0B3B8;}
+.ptext{padding:12px 16px 14px;font-size:15px;line-height:1.36;white-space:pre-wrap;
+word-break:break-word;}
+.ptext .more{color:#65676B;cursor:pointer;font-weight:500;}
+.ptext .rest{display:none;}
+.ptext.open .rest{display:inline;}
+.ptext.open .more{display:none;}
+.pmedia{position:relative;}
+.pimg{width:100%;display:block;background:#000;}
+.vidmark{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.65);
+color:#fff;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;}
+.pbar{display:flex;border-top:1px solid #CED0D4;margin-top:2px;}
+.pbar div{flex:1;text-align:center;padding:9px 0;font-size:14px;font-weight:600;
+color:#65676B;}
+</style></head><body>
+<div class="wrap">
+<header class="top">
+  <h1>Ako budú príspevky vyzerať na Facebooku</h1>
+  <p>Simulácia feedu. Na Facebooku ide von <strong>len cover ako jedna fotka</strong>
+  a celý obsah slidov je v texte nad ňou. Facebook dlhý text skráti a ponúkne
+  „Zobraziť viac", presne ako tu. Klikni naň a text sa rozbalí.</p>
+  <div class="legend">
+    <span>31 príspevkov</span>
+    <span>Text nad fotkou</span>
+    <span>Cover 4:5</span>
+    <span>Bez karuselu</span>
+  </div>
+</header>
+<div class="feed">
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 1</div>
+  </div>
+  <div class="ptext">Aj u nás sa každý večer bojovalo o mobil.
+
+Som Lucia, mama dvoch detí. Večer čo večer to isté. Prosby, vyjednávanie, zvýšený hlas. A potom výčitky, keď deti konečne zaspali. Milovala som svoje deti a<span class="rest"> každý večer som s nimi bojovala.
+
+Skúšala som zákazy. Brala som mobil, skracovala časy, vyhrážala sa. Fungovalo to tak tri dni. Potom prišiel odpor a hádky boli ešte horšie. Zákazy nezaberali, len nás oddeľovali.
+
+Zlom prišiel, keď som prestala bojovať s mobilom. Začala som sa pýtať inak. Čo tam moje dieťa hľadá? Prečo sa mu nechce prestať? Odpovede ma prekvapili. Problém nebol mobil. Problém bolo to, čo mobil nahrádzal.
+
+Dnes to u nás vyzerá inak. Mobil má svoje miesto v dni, nie celý deň. Večery sú pokojnejšie. Nie dokonalé, ale naše.
+
+Nič z toho nie je mágia. Sú to malé kroky, ktoré zvládne každá rodina. A presne o tých tu budeme písať. Bez strašenia, bez zákazov, bez výčitiek. Rodič rodičovi.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/01-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 2</div>
+  </div>
+  <div class="ptext">10 viet, ktoré zaberú, keď máš chuť kričať.
+
+Keď doma vybuchne hnev, velenie v mozgu preberá emočná časť. U dieťaťa aj u teba. Preto v kríze nepremýšľaš, len reaguješ. Pripravená veta je ako<span class="rest"> zábradlie. Drží, keď sa všetko trasie.
+
+Keď dieťa nechce prestať:
+„Viem, že ťa to baví… a čas sa skončil."
+„Posledná minúta. Dokončíme to spolu."
+„Vidím, že ťa to nahnevalo. Som tu."
+„Toto je ťažké. Zvládneme to spolu."
+
+Keď to eskaluje:
+„Stop. Nadýchneme sa. Potom pokračujeme."
+„Nebudem kričať. Počkám, kým budeme obaja pokojní."
+„Rozumiem, že chceš pokračovať. Odpoveď je nie."
+A keď je zle tebe: „Potrebujem chvíľu. Hneď som späť."
+
+Najsilnejšia výmena je táto. Namiesto „Prestaň už konečne!" skús „Vidím, že je toho na teba veľa." Najprv pocit, potom pravidlo.
+
+Prečo to funguje? Dieťa si reguláciu emócií požičiava od teba. Pokojná veta upokojí dva mozgy naraz. Nemusíš vyhrať hádku, stačí ju nezačať.
+
+Chceš aj celý návod na pokojnejší večer? Napíš do komentárov RESET a pošlem ti ho do správy.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/02-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 3</div>
+  </div>
+  <div class="ptext">Pokojnejší večer bez boja o mobil. Už dnes.
+
+Nemusíš čakať týždne na zmenu. Prvý pokojnejší večer vieš mať do 24 hodín. Bez zákazov a bez výčitiek. Nemeníš celý život, meníš tri veci: reakciu,<span class="rest"> hranicu a atmosféru.
+
+Čo je v 24H Resete:
+
+1. Zmeň jednu vetu. „Vidím, že ťa to baví… a o chvíľu končíme."
+2. Nastav jednu hranicu. „Mobil sa vypína pred spaním."
+3. Buď o 10 percent pokojnejšia. Menej kriku, viac pokoja.
+
+Jeden večer. Tri malé zmeny.
+
+Čo si môžeš všimnúť už dnes večer? Menej odporu. Menej napätia. Viac spolupráce. A ak to nevyjde perfektne, nič sa nedeje. Toto nie je test, je to začiatok.
+
+Celý návod je zadarmo. Napíš do komentárov RESET a pošlem ti ho rovno do správy.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/03-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 4</div>
+  </div>
+  <div class="ptext">Prečo tvoje dieťa nedokáže odložiť mobil?
+
+„Ja sa viem ovládnuť. Tak prečo moje dieťa nie?" Hovorí si to veľa rodičov a je to úplne pochopiteľné. Odpoveď ale nie je v disciplíne. Je v mozgu.
+
+Detský<span class="rest"> mozog nie je zmenšený mozog dospelého. Časť, ktorá riadi sebaovládanie a schopnosť zastaviť sa, dozrieva až okolo 20 až 25 rokov. Volá sa prefrontálna kôra a píše o nej aj neuropsychológ Álvaro Bilbao v knihe Detský mozog vysvetlený rodičom. Tvoje dieťa ju ešte len stavia.
+
+Predstav si mozog ako orchester. Hudobníci hrajú naplno. Emócie, chuť, zvedavosť. Len dirigent ešte neprišiel na pódium.
+
+Keď dieťa nevie prestať, nie je to vzdor. Dirigent ešte nedorazil.
+
+Tvoja úloha nie je kričať z hľadiska. Tvoja úloha je byť dočasným dirigentom. Pokojným a láskavým. Dovtedy, kým to dieťa zvládne samo.
+
+A v praxi? Namiesto „Zase si na mobile?!" skús „Aký bol deň? Vyzeráš unavene." Neútoč na správanie, všímaj si stav.
+
+Chceš vedieť, ako spraviť prvú zmenu už dnes večer? Napíš do komentárov RESET a pošlem ti návod.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/04-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 5</div>
+  </div>
+  <div class="ptext">10 aktivít, ktoré zaberú lepšie ako mobil. Pre deti 6 až 9 rokov.
+
+Deti v tomto veku nechcú aktivitu. Chcú zážitok. Potrebujú hru, fantáziu, pohyb a okamžitú odozvu. Presne to, čo im dáva mobil. Tak<span class="rest"> im to dajme my, v reálnom svete.
+
+1. Bunker z deky. „Postavíme tajnú základňu? Ty veliš."
+2. Poklad v ľade. „Zamrazila som hračku. Vysloboď ju!"
+3. Disco na jednu pesničku. „Jedna pesnička, tancujeme všetci."
+4. Slepá ochutnávka. „Zaviaž mi oči. Hádam, čo mi dáš."
+5. Kriedová dráha. „Nakresli si vonku vlastnú cestu a prejdi ju."
+6. Papierové lietadlá. „Kto doletí ďalej z troch pokusov?"
+7. Domáci semafor. „Zelená beh, oranžová soška, červená ľah."
+8. Stavba mosta. „Postav most, po ktorom prejde autíčko."
+9. Škatuľové mesto. „Z krabíc postavíme mesto pre figúrky."
+10. Obtlačky prírody. „Nazbieraj listy, spravíme z nich obrazy."
+
+A jeden dôležitý detail. Nepýtaj sa „Čo chceš robiť?". Povedz „Poď, dáme toto." Jedna konkrétna vec zaberie viac než desať možností.
+
+Ktorú vyskúšate prvú? Napíš do komentárov.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/05-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 6</div>
+  </div>
+  <div class="ptext">Ema prišla zo školy a zapla TikTok. Problém ale nebol mobil.
+
+Čo sa v ten deň naozaj stalo? Na telesnej ju vybrali do družstva poslednú. Cez obed sedela sama. Celý deň sa tvárila, že je to v pohode.<span class="rest"> Doma hodila tašku, sadla si na gauč a zapla mobil. Video za videom.
+
+„Zase na mobile? Choď sa radšej učiť."
+
+Ema prevrátila oči. Mama zvýšila hlas. Ema vybuchla. Dvere sa zabuchli. Mobil zostal, vzťah sa napol.
+
+Je problém mobil? Alebo sa pozeráš na dieťa, ktoré malo ťažký deň a nevie ho spracovať inak? Obrazovka je pre deti často najrýchlejší únik od toho, čo bolí.
+
+Mobil v tej chvíli nebol problém. Bol únik.
+
+Preto namiesto „Zase na mobile?!" skús dnes „Poď ku mne. Aký bol deň?" Pýtaj sa na deň, nie na mobil. Keď uvidíš príčinu, správanie sa začne meniť samo.
+
+Poznáš mamu, ktorá tento príbeh potrebuje čítať? Zdieľaj jej ho.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/06-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 7</div>
+  </div>
+  <div class="ptext">Mobil nie je problém. Problém je to, čo vytláča.
+
+Prestaň počítať minúty. Nie je obrazovka ako obrazovka a žiadne jedno číslo nevyrieši všetko. Americká pediatrická akadémia pri školákoch minútový<span class="rest"> limit ani nedáva. Hovorí niečo iné: strážte, či obrazovky nevytláčajú spánok, pohyb a vzťahy.
+
+Namiesto „koľko" sa teda pýtaj „čo mobil môjmu dieťaťu vytláča".
+
+Polož si štyri otázky:
+
+Spí moje dieťa dobre?
+Má dostatok pohybu?
+Má reálne vzťahy a kamarátov?
+Funguje v škole?
+
+Štyrikrát áno znamená, že mobil je pravdepodobne v poriadku.
+
+A keď je niekde nie? Mobil pravdepodobne nahrádza niečo, čo dieťa potrebuje. Spánok, pohyb alebo blízkosť. Vtedy nerieš mobil. Rieš to, čo chýba.
+
+Vráť sa k týmto otázkam vždy, keď si nebudeš istá, či je toho veľa.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/07-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 8</div>
+  </div>
+  <div class="ptext">Veta, ktorá funguje ako malé kúzlo: „Poď, ukážem ti niečo."
+
+Poznáš to. Pripravíš aktivitu a dieťa sa na ňu ani nepozrie. Nie je to nevďačnosť. Rozbehnúť sa je pre detský mozog najťažšia časť každej<span class="rest"> činnosti. Obrazovka štart nepotrebuje, hra áno.
+
+Deti nepotrebujú animátora. Potrebujú štart.
+
+Ako to funguje? Sadni si k dieťaťu a začnite spolu. Dve minúty stačia. Mozog sa naladí na hru a keď sa aktivita rozbehne, dieťa v nej často pokračuje samo. Pokojne aj pol hodiny.
+
+Ty rozbiehaš, dieťa pokračuje.
+
+Preto namiesto „Choď sa hrať." skús „Poď, ukážem ti niečo." Dve minúty, ktoré zmenia celé popoludnie.
+
+Skús to dnes a napíš do komentárov, či to zabralo.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/08-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 9</div>
+  </div>
+  <div class="ptext">Tri vety, ktoré menia večer.
+
+Najprv spojenie, potom usmernenie. Toto pravidlo opakujú najznámejší detskí psychológovia, od Daniela Siegela po Dr. Becky Kennedy. Keď dieťa počuje útok, bráni sa. Keď<span class="rest"> počuje záujem, otvorí sa. Dieťa počúva až vtedy, keď sa cíti videné.
+
+Dieťa po škole hneď zapne mobil.
+Namiesto „Zase si na mobile?!" skús „Ahoj! Rada ťa vidím. Aký bol deň?"
+
+Dieťa je pri rodine, ale pozerá do mobilu.
+Namiesto „Odlož to okamžite!" skús „Poď k nám. Chýbaš nám tu."
+
+Dieťa scrolluje bez prestávky.
+Namiesto „Koľko ešte?!" skús „Čo pozeráš? Ukážeš mi?"
+
+Úprimný záujem otvára viac než príkaz. Prvá zmena nestojí nič. Len inú vetu.
+
+Chceš návod, ako spraviť pokojnejší večer už dnes? Napíš do komentárov RESET a pošlem ti ho do správy.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/09-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 10</div>
+  </div>
+  <div class="ptext">Deti a mobily: prečo sa do toho miešam aj ja.
+
+Dnes píše Peter, ocko z Vyváženého detstva.
+
+O deťoch a mobiloch hovoria väčšinou mamy. Ockovia mlčia. Alebo mávnu rukou, veď je to len telefón. U nás<span class="rest"> doma to riešime obaja a robí to obrovský rozdiel.
+
+Deti totiž nekopírujú to, čo hovoríme. Kopírujú to, čo robíme. Keď otec celý večer pozerá do telefónu, žiadne pravidlo na svete neplatí. Najsilnejšie pravidlo je to, ktoré dodržiavaš aj ty.
+
+A nemusíš byť expert na výchovu. Stačí byť pri tom. Pri dohode, pri hre, pri večernom vypínaní. Deti potrebujú vidieť, že v tom rodičia stoja spolu.
+
+Ak si ocko a čítaš to, toto miesto je aj pre teba. A ak máš doma ocka, ktorý by to mal čítať, ukáž mu tento príspevok.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/10-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 11</div>
+  </div>
+  <div class="ptext">Deň má rytmus. Aj mobil ho potrebuje.
+
+Prečo vzniká najviac konfliktov okolo mobilu? Pretože mobil nemá svoje miesto. Je všade a stále. Deti pritom nepotrebujú menej mobilu. Potrebujú viac<span class="rest"> predvídateľnosti.
+
+Skús tri kotvy dňa:
+
+Ráno svetlo a pohyb, nie obrazovka. Pokojný štart drží celý deň.
+Poobede obrazovky až po povinnostiach, s jasným koncom.
+Večer hodinu pred spaním bez obrazoviek. Presne to odporúča Americká pediatrická akadémia.
+
+Mobil má v dni svoje miesto. Ale nie celý deň.
+
+Nejde o kontrolu, ide o rytmus. Keď má deň rytmus, je menej konfliktov, viac pokoja a viac spolupráce. Mozog je pokojnejší, keď vie, čo príde.
+
+Nemusíš zaviesť všetko naraz. Vyber si dnes jedno z tých troch pravidiel a začni ním. Zvyšok príde sám.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/11-cover.jpg" alt=""><div class="vidmark">🎬 video</div></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 12</div>
+  </div>
+  <div class="ptext">Nuda nie je nepriateľ. Nuda je štartér.
+
+„Mami, nudím sa." Prvý impulz? Rýchlo niečo vymyslieť. Alebo podať mobil. Lenže nuda nie je problém, ktorý treba vyriešiť.
+
+Keď sa dieťa nudí, mozog sa<span class="rest"> nezastaví. Začne si vytvárať vlastnú zábavu a naštartuje fantáziu. Presne to sa pri mobile nedeje. Tam dieťa dostáva hotový svet.
+
+Z nudy sa rodí tvorivosť.
+
+Nabudúce teda skús namiesto mobilu hneď po zaznení „nudím sa" povedať: „Hmm, to je fajn. Som zvedavá, čo vymyslíš." Najlepšie nápady detí sa rodia práve z nudy.
+
+Nechaj nudu chvíľu pracovať. Desať minút stačí. Uvidíš, čo sa stane.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/12-cover.jpg" alt=""><div class="vidmark">🎬 video</div></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 13</div>
+  </div>
+  <div class="ptext">Najprv pochopenie. Potom hranica.
+
+Skús vetu z dvoch častí: „Viem, že ťa to baví… a čas sa skončil."
+
+Prvá časť uznáva pocit. Druhá drží pravidlo. Empatia a hranica v jednej vete.
+
+Prečo to funguje?<span class="rest"> Keď dieťa cíti, že jeho pocit je prijatý, odpor klesá. Píšu o tom Daniel Siegel aj Dr. Becky Kennedy: hranice fungujú najlepšie so spojením. Pochopenie neznamená ustúpiť. Znamená byť na jeho strane, kým platí pravidlo.
+
+A prečo nestačí len jedna z tých dvoch častí? Samotná prísnosť? Dieťa počuje útok a ide do obrany. Samotná empatia? Bez hranice sa nič nezmení. Deti potrebujú oboje naraz.
+
+Dnes večer teda namiesto „Okamžite to vypni!" skús „Viem, že ťa to baví… a čas sa skončil." A pozor, tón je polovica vety. Povedz to pokojne.
+
+Chceš viac viet, ktoré fungujú? Napíš do komentárov RESET a pošlem ti návod.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/13-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 14</div>
+  </div>
+  <div class="ptext">Zákazy fungujú. Presne tri dni.
+
+Deň prvý ticho. Deň druhý vyjednávanie. Deň tretí vojna. Poznáš to? Po zákaze príde odpor, obchádzanie pravidiel a napätie vo vzťahu. Zákaz nezmení návyk, len ho<span class="rest"> schová.
+
+Čo sa dieťa naučí zo zákazu? Nenaučí sa pracovať s mobilom. Naučí sa, ako sa vyhnúť tebe. Skrývať, zapierať, obchádzať. Psychológia to volá reaktancia: zakázané ovocie chutí dvojnásobne.
+
+A to je horšie než hodina na YouTube.
+
+Čo funguje namiesto zákazov? Dohoda a rytmus. Mobil má svoje miesto v dni, nie celý deň, a dieťa vie, kedy áno a kedy nie. Pravidlá, na ktorých sa dieťa podieľa, rešpektuje najviac.
+
+Poznáš niekoho, kto práve teraz bojuje so zákazmi? Zdieľaj mu tento príspevok, možno mu ušetrí pár hádok.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/14-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 15</div>
+  </div>
+  <div class="ptext">10 aktivít pre deti 9 až 12 rokov, ktoré nie sú „pre malých".
+
+Staršie deti sa nechcú hrať. Chcú výzvu, vlastné rozhodnutia a pocit, že sú v niečom dobré. Presne to im dáva online svet. Tak im to<span class="rest"> dajme aj offline.
+
+1. Escape room doma. „Schovala som 3 indície. Máš 15 minút."
+2. Nauč ma niečo. „Za 5 minút ma nauč, čo vieš len ty."
+3. Súboj receptov. „Každý jedlo z 3 surovín. Rodina hlasuje."
+4. Mapa pokladu. „Nakresli mapu, ja podľa nej schovám odmenu."
+5. Rodinná kniha rekordov. „Aký rekord prekonáš dnes?"
+6. Reportér. „Sprav so mnou rozhovor ako moderátor."
+7. Nočná misia. „Zhasneme a hľadáme predmety baterkou."
+8. Staviteľská výzva. „Postav vežu, ktorá udrží knihu."
+9. Vlastná spoločenská hra. „Vymysli pravidlá, večer ju hráme."
+10. Výmena rolí. „Hodinu veliš ty. Uvidíme, čo vydržím."
+
+A kľúč k starším deťom: namiesto „Nechceš sa ísť hrať?" skús „Stavím sa, že toto nedáš." Výzva zaberá viac než pozvánka.
+
+Mobil dáva rýchlu odmenu. Ty daj rýchly zážitok.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/15-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 16</div>
+  </div>
+  <div class="ptext">Hranice nie sú boj. Hranice sú bezpečie.
+
+Predstav si most so zábradlím. Zábradlie ťa neobmedzuje. Vďaka nemu sa nebojíš prejsť na druhú stranu. Presne toto robia deťom jasné a stále<span class="rest"> pravidlá.
+
+Hranica nie je múr. Je to zábradlie.
+
+Keď dieťa počuje vykríknuté „Nie!", ide do boja. Ale keď počuje jasnú, pokojnú hranicu, cíti bezpečie. Rozdiel nie je v pravidle, je v podaní. Hranica povedaná pokojne upokojuje. Zákaz vykríknutý v hneve zraňuje.
+
+A čo frustrácia? Dieťa bude občas nespokojné. To je normálne a v poriadku. Rozdiel je v tom, že to nebude boj. Hranice učia rešpekt, nie strach.
+
+Jasné a pokojné vedenie. To je celé. Nie viac kontroly. Nie menej lásky.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/16-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 17</div>
+  </div>
+  <div class="ptext">Jedno pravidlo, ktoré zlepší spánok celej rodiny: obrazovky spia v kuchyni.
+
+Večerné svetlo z obrazovky brzdí melatonín, hormón spánku. Mozog si myslí, že je ešte deň. Výsledok u detí? Zaspávajú<span class="rest"> neskôr, spia menej a ráno sú podráždenejšie. Preto pediatri odporúčajú hodinu pred spaním bez obrazoviek.
+
+Ak mobil narúša spánok, je to červená vlajka.
+
+Riešenie je jednoduché. Spravte si v kuchyni nabíjaciu stanicu. Večer sa tam odložia všetky obrazovky. Aj tie rodičovské. Spálňa zostáva bez obrazoviek, presne to odporúča aj Americká pediatrická akadémia.
+
+Nie je to trest. Je to rodinné pravidlo.
+
+A ako to povedať? Namiesto „Daj sem ten mobil, ideš spať!" skús „Obrazovky sa idú nabíjať. Uvidíte sa ráno." Funguje to pre malé aj veľké deti.
+
+Chceš návod, ako začať už dnes večer? Napíš do komentárov RESET a pošlem ti ho.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/17-cover.jpg" alt=""><div class="vidmark">🎬 video</div></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 18</div>
+  </div>
+  <div class="ptext">Ako to máme u nás doma s mobilmi. Aj s tým, čo nám nejde.
+
+Náš rytmus: ráno idú deti do školy bez mobilov. Poobede má každé svoje okno po úlohách. Večer sa mobily odkladajú v kuchyni a tam aj<span class="rest"> spia.
+
+Naše zóny: pri jedle mobil nemá miesto. Platí to aj pre nás dospelých. A práve to je najťažšia časť, úprimne. Deti totiž nekopírujú pravidlá. Kopírujú nás.
+
+A čo nám nejde? Víkendy. Choroby. Návštevy. Prázdniny u starých rodičov. Vtedy sa rytmus rozsype a začíname odznova. Bez drámy a bez výčitiek.
+
+Nie sme dokonalí. Učíme sa spolu.
+
+A ako to máte vy? Čo vám doma funguje a čo je najťažšie? Napíšte do komentárov, som naozaj zvedavá.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/18-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 19</div>
+  </div>
+  <div class="ptext">Keď dieťa kričí „Nenávidím ťa!", hovorí niečo iné.
+
+V tej chvíli sa niečo spustí aj v tebe. Zrýchli sa tep, napne sa telo, máš chuť zvýšiť hlas. Tvoj nervový systém ide do boja, presne ako ten<span class="rest"> detský. A dve rozbúrené nervové sústavy spor nevyriešia.
+
+Čo dieťa naozaj hovorí?
+
+„Neviem zvládnuť, čo cítim."
+„Potrebujem, aby si to zvládla ty."
+
+Nie je to nenávisť. Je to preťaženie.
+
+Dieťa sa upokojuje pri pokojnom dospelom. Psychológovia to volajú spoluregulácia, detský nervový systém sa ladí podľa toho tvojho. Píše o tom Daniel Siegel aj Mona Delahooke. Tvoj pokoj je silnejší než akékoľvek pravidlo.
+
+A v praxi? Namiesto „Takto sa so mnou rozprávať nebudeš!" skús „Vidím, že sa hneváš. Som tu. Zvládneme to." Najprv pokoj, potom hranica.
+
+Ukazuješ mu tým viac než hranice. Ukazuješ mu, ako sa zvládajú emócie v živote.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/19-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 20</div>
+  </div>
+  <div class="ptext">Krabica, ktorá zachraňuje popoludnia.
+
+„Nudím sa" prichádza vždy v najhorší moment. Keď varíš, telefonuješ, pracuješ. A mobil je najrýchlejšia záchrana. Preto sa oplatí mať zálohu, ktorá nie je<span class="rest"> obrazovka.
+
+Volá sa krabica nápadov a stačí na ňu obyčajná krabica alebo košík. Čo do nej patrí:
+
+pastelky a papier
+lego alebo stavebnica
+malé puzzle
+plastelína
+kartičky s aktivitami
+
+Ako to funguje? Keď príde nuda, nepýtaš sa, čo chce dieťa robiť. Povieš: „Pozri do krabice nápadov." Jedna veta namiesto vyjednávania. A občas obsah vymeň, novinka priťahuje.
+
+Priprav ju tento víkend. Zaberie ti to desať minút, slúžiť bude mesiace.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/20-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 21</div>
+  </div>
+  <div class="ptext">Deti nepotrebujú menej mobilu. Potrebujú predvídateľnosť.
+
+Prečo dieťa prosí o mobil už o druhej? Lebo nevie, či dnes mobil vôbec bude. Tak skúša. Prosí. Vyjednáva. Neistota vyrába prosíkanie.
+
+Keď<span class="rest"> dieťa vie, že mobil je o štvrtej, nemusí prosiť o druhej. Nemusí skúšať hranice. Vie, čo príde a kedy. Mozog je pokojnejší, keď vie, čo príde.
+
+Skús to teda preformulovať. Namiesto „Uvidíme, možno neskôr." povedz „Mobil je dnes po úlohách, o štvrtej." Jasný začiatok, jasný koniec.
+
+Predvídateľnosť upokojuje viac než pravidlá. A vieš ju zaviesť už dnes.
+
+Chceš návod na prvý krok? Napíš do komentárov RESET a pošlem ti ho do správy.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/21-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 22</div>
+  </div>
+  <div class="ptext">Trest učí strach. Následok učí zodpovednosť.
+
+„Ak to nevypneš, beriem ti mobil!" Mozog dieťaťa ide do obrany. Bojuje, argumentuje, klame. Trest vytvára boj o moc.
+
+Následok je iný. Je pokojný a<span class="rest"> predvídateľný. A súvisí s tým, čo sa stalo. Tento princíp stojí v jadre Pozitívnej disciplíny Jane Nelsen: láskavosť a pevnosť naraz. Následok vytvára učenie.
+
+Ako to znie v praxi? Namiesto „Týždeň bez mobilu!" skús „Dohoda dnes nevyšla. Zajtra máme novú šancu." Pokojne, jasne, dôsledne.
+
+Deti nezačnú rešpektovať hranice zo strachu. Začnú ich rešpektovať, keď sú zrozumiteľné a stabilné. Rodič zostáva stabilný a v tom je celé kúzlo.
+
+Ulož si to a vytiahni pri najbližšom porušení dohody. Lebo dohody sa porušujú. Aj u nás.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/22-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 23</div>
+  </div>
+  <div class="ptext">Aktivita musí mať trochu wow. Inak prehráva s mobilom.
+
+Mobil dáva rýchly dopamín. Farby, zvuky, okamžitú odmenu. Nudná aktivita proti tomu nemá šancu. Ty musíš dať rýchly zážitok.
+
+Čo funguje na<span class="rest"> detské zmysly:
+
+voda, prelievanie a špliechanie
+farby a miešanie
+piesok a hlina
+svetlo, napríklad baterka v tmavej izbe
+pohyb, stavanie, tvorenie
+
+Zmysly. To je celé tajomstvo.
+
+A nemusí to byť projekt. Miska s vodou a pár pohárikov. Veľký papier na zemi. Baterka pod dekou. Keď sa zapoja ruky, oči a telo, mobil stráca kúzlo.
+
+Vyber jednu vec a priprav ju na dnes. Drobnosť stačí, zmysly spravia zvyšok.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/23-cover.jpg" alt=""><div class="vidmark">🎬 video</div></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 24</div>
+  </div>
+  <div class="ptext">Zabudni na minúty. Dohodnite si situácie.
+
+Počítanie minút je boj. Dieťa vyjednáva o každú jednu. A menšie deti čas ani poriadne nevnímajú, desať minút je pre ne abstraktný pojem.
+
+Deti nemyslia v<span class="rest"> minútach. Myslia v situáciách.
+
+Naviaž teda mobil na situácie.
+
+Kedy áno: po úlohách, cez víkend popoludní, na dlhej ceste autom.
+Kedy nie: pri jedle, v spálni, hodinu pred spaním.
+
+Jedlo a spálňu bez obrazoviek odporúča aj Americká pediatrická akadémia.
+
+Dieťaťu potom stačí vedieť, aká situácia práve je. „Úlohy sú hotové, môžeš." Alebo „Večeriame, mobil počká." Žiadne minúty, žiadne vyjednávanie. Jasná situácia porazí každý minútový limit.
+
+Vyberte si prvé situácie ešte dnes. A ak chceš celý postup na prvých 24 hodín, napíš do komentárov RESET.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/24-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 25</div>
+  </div>
+  <div class="ptext">Prečo deti klamú o mobile a čo s tým naozaj pomáha.
+
+„Bol si na mobile?" „Nie." A pritom obaja viete, že áno. V tebe to vystrelí: prečo klame? Lenže dieťa v tej chvíli nie je v logike. Je v<span class="rest"> obrane.
+
+Detské klamstvo väčšinou nehovorí „chcem ťa oklamať". Hovorí „nechcem ťa sklamať" a „nechcem, aby si sa hnevala".
+
+Klamstvo sa nezmenší trestom. Zmenší sa bezpečím.
+
+Keď dieťa označíš za klamára, jeho mozog si uloží niečo nebezpečné: pravda sa nevypláca, nabudúce to lepšie skryjem. Pravda sa musí oplatiť viac než lož.
+
+Preto namiesto „Ty si klamár!" skús „Nepotrebujem vinníka. Potrebujem vedieť, čo sa stalo, nech to vyriešime." A keď dieťa prizná pravdu, poďakuj mu. To chce odvahu.
+
+V týchto malých momentoch sa buduje dôvera. Taká, ktorá vydrží aj v puberte.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/25-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 26</div>
+  </div>
+  <div class="ptext">Aj ja som dala deťom tablet, len aby bol pokoj. A dlho som si to vyčítala.
+
+Poznáš ten moment. Potrebuješ dovariť, dopracovať, dodýchať. Tablet je najrýchlejšie ticho. A potom príde výčitka.
+
+Nie si<span class="rest"> zlý rodič. Si unavený rodič.
+
+Problém nie je jeden tablet navyše. Svet sa zmenil rýchlejšie, než stihli vzniknúť pravidlá pre rodiny. Všetci sa to učíme za pochodu. Výčitky nič nezmenia, malé kroky áno.
+
+Čo mne pomohlo? Prestala som sa snažiť o dokonalosť. Začala som jedným pravidlom a jedným pokojnejším večerom. Stačí byť o 10 percent pokojnejšia. Aj to mení všetko.
+
+Poznáš ten pocit? Napíš do komentárov. Nie si v tom sama.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/26-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 27</div>
+  </div>
+  <div class="ptext">Stačia dve až tri miesta, kde mobil nemá hlavné slovo.
+
+Nemusíš meniť celý deň. Stačí pár momentov, ktoré patria len vám. Bez obrazovky. Americká pediatrická akadémia ich volá zóny bez obrazoviek a<span class="rest"> odporúča ich každej rodine.
+
+Malé zóny, veľký rozdiel.
+
+Kde fungujú najlepšie:
+
+pri jedle
+v posteli
+v aute na krátke trasy
+
+Nemusí ich byť veľa. Dôležité je, že sú stále rovnaké.
+
+Čo sa stane? Rozhovory sú prirodzenejšie. Deti viac vnímajú, čo sa deje okolo nich. A ty máš pocit, že ste spolu, nie len vedľa seba. Existujú miesta, kde je vzťah dôležitejší než obrazovka.
+
+Vyber si dnes jednu zónu. A ak chceš návod na celý prvý deň, napíš do komentárov RESET.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/27-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 28</div>
+  </div>
+  <div class="ptext">Nemusíš byť animátor. Stačí päť minút.
+
+„Na aktivity nemám čas." Nemusíš mať. Offline svet detí nevzniká z veľkých projektov. Vzniká z malých momentov počas dňa. Päť minút je viac, než si<span class="rest"> myslíš.
+
+Mikro-momenty, ktoré stačia:
+
+5 minút kreslenia pri stole, kým varíš
+dieťa mieša cesto alebo pripravuje stôl
+lego na stole počas tvojho telefonátu
+krátka spoločná hra pred večerou
+
+Malé momenty, veľká hodnota.
+
+Pre teba je to povinnosť, pre dieťa dobrodružstvo. Dieťa sa cíti dôležité. Cíti, že je súčasťou toho, čo sa doma deje. A to mu nedá žiadna obrazovka.
+
+Vyber si jeden mikro-moment na dnes. A zajtra ďalší. Viac netreba.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/28-cover.jpg" alt=""><div class="vidmark">🎬 video</div></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 29</div>
+  </div>
+  <div class="ptext">Krízový plán na tri kroky. Pre chvíle, keď vypnutie mobilu skončí výbuchom.
+
+Keď dieťa vybuchne, logika nefunguje. Rozbúrený detský mozog nepočuje argumenty. Neuroveda hovorí jasne: najprv sa musí<span class="rest"> upokojiť nervový systém a až potom príde priestor na pravidlá. Poradie nie je náhoda, takto funguje mozog.
+
+1. Upokoj seba. Nádych a výdych. Tvoj pokoj je nákazlivý. Aj tvoj nepokoj.
+2. Spoj sa. Pomenuj, čo vidíš: „Vidím, že sa hneváš."
+3. Usmerni. Pokojne zopakuj pravidlo: „A mobil teraz končí."
+
+Psychológovia tomu hovoria najprv spojenie, potom usmernenie.
+
+A ešte jedna vec. Priprav si svoje vety dopredu. V kríze nevymýšľaš, len siahneš po pripravenom. Vyber si jednu vetu ku každému kroku a drž sa ich. Rodič, ktorý má plán, reaguje pokojne.
+
+Chceš k tomu aj prvý krok na dnes večer? Napíš do komentárov RESET.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/29-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 30</div>
+  </div>
+  <div class="ptext">Jedna dohoda, ktorá platí aj pre rodičov.
+
+Pravidlá, ktoré existujú len v tvojej hlave, sú pre dieťa náhodné zákazy. Americká pediatrická akadémia preto rodinám odporúča spísať si spoločný plán pre<span class="rest"> obrazovky. Jasné očakávania, kedy, kde a ako sa používajú.
+
+Deti rešpektujú dohody viac než zákazy.
+
+Čo si v pláne dohodnite:
+
+kedy sú obrazovky v poriadku a kedy nie
+miesta bez obrazoviek, jedlo a spálne odporúča AAP
+čo platí pre rodičov
+ako sa plán mení s vekom dieťaťa
+
+Stačí papier na chladničke.
+
+A pravidlá pre rodičov? Áno. Toto deti milujú. Rodič neberie mobil k večeri. Počúva bez mobilu v ruke. Keď pravidlá platia pre všetkých, deti ich rešpektujú prirodzene.
+
+Sadnite si k tomu tento víkend. A prvý krok môžeš spraviť už dnes večer, napíš do komentárov RESET a návod ti pošlem.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/30-1.jpg" alt=""></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article>
+<article class="post">
+  <div class="phead">
+    <img class="ava" src="zasobnik-assets/avatar.jpg" alt="">
+    <div>
+      <div class="pname">Vyvážené detstvo</div>
+      <div class="pmeta">Práve teraz · 🌍</div>
+    </div>
+    <div class="pnum">POST 31</div>
+  </div>
+  <div class="ptext">Nie zákazy. Rovnováha.
+
+Technológie patria do života našich detí. Budú sa cez ne učiť, budú cez ne pracovať, budú cez ne komunikovať. Digitálny svet tu nie je na chvíľu, je tu navždy. Našou úlohou<span class="rest"> nie je odstrániť ich. Našou úlohou je naučiť deti používať ich múdro.
+
+Nepriateľ nie je obrazovka. Nepriateľom sú extrémy. Buď dieťa celý deň na mobile, alebo večný boj a výčitky. Medzi tým je cesta a volá sa rovnováha.
+
+Rovnováha znamená, že mobil má svoje miesto. Ale neberie priestor spánku. Ani pohybu a hre. Ani vzťahom a času s rodinou. Ani nude, z ktorej sa rodí tvorivosť. Práve toto deti potrebujú najviac.
+
+Nejde o zákaz. Nejde o dokonalosť. Ide o schopnosť robiť vedomé rozhodnutia. A tú sa deti učia od nás.
+
+Rodič nie je policajt. Rodič je sprievodca.
+
+Ak to cítiš rovnako, si tu správne. Zdieľaj tento príspevok s rodičom, ktorý to potrebuje čítať.
+
+Menej obrazoviek. Viac detstva.</span>… <span class="more">Zobraziť viac</span></div>
+  <div class="pmedia"><img class="pimg" src="zasobnik-assets/31-cover.jpg" alt=""><div class="vidmark">🎬 video</div></div>
+  <div class="pbar"><div>👍 Páči sa mi</div><div>💬 Komentár</div><div>↗ Zdieľať</div></div>
+</article></div>
+</div>
+<script>
+document.addEventListener('click', function(e){
+  var m = e.target.closest('.more');
+  if(m){ m.closest('.ptext').classList.add('open'); }
+});
+</script>
+</body></html>
